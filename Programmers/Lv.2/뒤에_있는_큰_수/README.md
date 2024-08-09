@@ -61,5 +61,4 @@ https://school.programmers.co.kr/learn/courses/30/lessons/154539
 
     - 파이썬으로 구현
         - https://wikidocs.net/192069
-        - 
 
