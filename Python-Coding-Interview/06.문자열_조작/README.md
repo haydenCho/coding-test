@@ -1,9 +1,4 @@
 ## 문자열 조작
-### 문제
-- 01. 유효한 팰린드롬: leetcode 125번 문제
-
-<br/>
-
 ### 문자열 관련 파이썬 메서드
 - upper(): 문자열을 대문자로 변환
 - lower(): 문자열을 소문자로 변환
@@ -12,6 +7,7 @@
 - isdecimal(): 문자열이 정수이면 True, 아니면 False를 반환
 - isdigit(): 문자열이 숫자이면 True, 아니면 False를 반환
 - isspace(): 문자열이 공백으로만 구성되어 있으면 True, 아니면 False를 반환
+- split(): 문자열을 특정 구분자(공백, 쉼표 등)를 기준으로 분리하여 리스트로 반환
 
 <br/>
 
@@ -30,3 +26,17 @@
 
 ### 파이썬 기본 기능
 - reverse(): 리스트 제공 기능, 리스트의 값을 반대로 뒤집는다.
+
+<br/>
+
+### sort()와 람다식
+- [sort(): 위키독스](https://wikidocs.net/233746)
+- [람다식: 위키독스](https://wikidocs.net/64)
+- sort()는 기본적으로 오름차순 정렬이며, 내림차순 정렬을 위해선 reverse 매개변수값을 True로 하면 된다.
+- 정렬 기준을 지정하기 위해 **key 매개변수와 함께 lambda 함수를 사용**하기도 한다.
+
+#### sorted()
+- 기본적으로 sort()와 동일하게 동작하지만 원본 리스트를 변경하지 않는다.
+- 원본 리스트 변경 여부가 다르기 때문에 사용방식도 다르니 유의.
+- sort(): `people.sort(key=lambda x: x['age'])`
+- sorted(): `sorted_people = sorted(people, key=lambda x: x['age'])`
