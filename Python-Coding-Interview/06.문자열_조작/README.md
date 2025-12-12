@@ -12,6 +12,7 @@
 <br/>
 
 ### 정규식
+- 문자열 전처리 등을 위해 사용하면 유용하다.(많이 쓰는 기호들은 꼭 알아둘 것!)
 - [위키독스](https://wikidocs.net/4308)
 - [참고 블로그](https://velog.io/@euisuk-chung/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D-%ED%99%9C%EC%9A%A9-%EB%B0%A9%EB%B2%95)
 
@@ -40,3 +41,23 @@
 - 원본 리스트 변경 여부가 다르기 때문에 사용방식도 다르니 유의.
 - sort(): `people.sort(key=lambda x: x['age'])`
 - sorted(): `sorted_people = sorted(people, key=lambda x: x['age'])`
+
+<br/>
+
+### 리스트 컴프리헨션
+- 직관적으로 리스트를 생성하는 방법
+- 컴프리헨션(Comprehension): 파이썬의 자료구조(list, dictionary, set)에 데이터를 좀 더 쉽고 간결하게 담기 위한 문법
+- 대괄호 "[", "]"로 감싸고 내부에 for문과 if 문을 사용하여 반복하며 조건에 만족하는 것만 리스트로 생성한다.
+    - in, not in 등의 조건도 사용할 수 있다.
+- [위키독스](https://wikidocs.net/22805)
+- [참고](https://bio-info.tistory.com/28#google_vignette)
+
+<br/>
+
+### collections 모듈
+- [collections](https://docs.python.org/ko/3/library/collections.html): 파이썬의 내장모듈
+- [defaultdict()](https://docs.python.org/ko/3/library/collections.html#collections.defaultdict): 키값이 없을 경우 미리 설정해놓은 초기값(default)을 반환하는 딕셔너리 생성
+    - (공식 문서)누락된 값을 제공하기 위해 팩토리 함수를 호출하는 딕셔너리 서브 클래스
+    - **초기값을 위해 인수를 제공**해야 한다. e.g. counts = collections.defaultdict(int) -> 0이 기본값
+    - [사용 예제 참고](https://leapcell.io/blog/ko/understanding-defaultdict-in-python)
+- [Counter()](https://docs.python.org/ko/3/library/collections.html#collections.Counter): 객체를 세는 데 사용하는 딕셔너리 서브 클래스
