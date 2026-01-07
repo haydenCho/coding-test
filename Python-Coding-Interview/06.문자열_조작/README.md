@@ -13,8 +13,22 @@
 
 ### 정규식
 - 문자열 전처리 등을 위해 사용하면 유용하다.(많이 쓰는 기호들은 꼭 알아둘 것!)
+- row string을 의미하는 r을 항상 쓰는 것이 좋다!(백슬래시(\)를 파이썬이 먼저 해석하지 않게 막아줌)
 - [위키독스](https://wikidocs.net/4308)
 - [참고 블로그](https://velog.io/@euisuk-chung/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D-%ED%99%9C%EC%9A%A9-%EB%B0%A9%EB%B2%95)
+- 예시 1: '[^a-z0-9]' → 소문자 알파벳(a–z) 또는 숫자(0–9)가 아닌 문자 1개
+    - [ ... ] : 문자 클래스(대괄호 안에 있는 문자 중 하나와 매칭)
+    - [^...] → …가 아닌 것
+    - re.sub('[^a-z0-9]', '', s): 소문자와 숫자가 아닌 문자를 제거(''로 변경)
+- 예시 2: r'[^\w]' → 문자/숫자/언더스코어가 아닌 모든 것
+    - \w : 문자 + 숫자 + _
+    - re.sub(r'[^\w]', ' ', paragraph): 문장부호(! ? , .)를 공백으로 치환
+
+### re.sub()
+- re.sub(pattern, replacement, string)
+    - 첫 번째 인자(pattern): 찾을 정규식 패턴
+    - 두 번째 인자(replacement): 바꿀 문자열
+    - 세 번째 인자(string): 대상 문자열
 
 <br/>
 
@@ -56,8 +70,15 @@
 
 ### collections 모듈
 - [collections](https://docs.python.org/ko/3/library/collections.html): 파이썬의 내장모듈
+- [deque()](https://docs.python.org/ko/3/library/collections.html#collections.deque): 데크 자료형
 - [defaultdict()](https://docs.python.org/ko/3/library/collections.html#collections.defaultdict): 키값이 없을 경우 미리 설정해놓은 초기값(default)을 반환하는 딕셔너리 생성
     - (공식 문서)누락된 값을 제공하기 위해 팩토리 함수를 호출하는 딕셔너리 서브 클래스
     - **초기값을 위해 인수를 제공**해야 한다. e.g. counts = collections.defaultdict(int) -> 0이 기본값
     - [사용 예제 참고](https://leapcell.io/blog/ko/understanding-defaultdict-in-python)
 - [Counter()](https://docs.python.org/ko/3/library/collections.html#collections.Counter): 객체를 세는 데 사용하는 딕셔너리 서브 클래스
+
+#### Deque(데크) 자료형
+- collections 모듈에 포함된 자료형
+- popleft() 기능 제공
+    - pop(0)이 O(n)의 속도인 반면 popleft()는 O(1)의 속도
+- [참고 블로그](https://siloam72761.tistory.com/entry/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EB%8D%B0%ED%81%ACdeque%EC%97%90-%EB%8C%80%ED%95%9C-%EB%AA%A8%EB%93%A0-%EA%B2%83-%EC%A0%95%EC%9D%98-%ED%95%A8%EC%88%98-%ED%99%9C%EC%9A%A9)

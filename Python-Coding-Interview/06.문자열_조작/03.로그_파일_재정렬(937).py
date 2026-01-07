@@ -17,6 +17,10 @@ class Solution:
         
         # 문자 로그 정렬
         letters.sort(key=lambda x : (x.split()[1:], x.split()[0]))
+        ''' 정렬 기준
+            1. x.split()[1:] → 본문
+            2. x.split()[0] → 식별자(본문이 같으면 식별자로 구분)
+        '''
 
         return letters + digits
 
