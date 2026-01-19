@@ -58,6 +58,13 @@
 
 <br/>
 
+#### join()
+- [Docs](https://www.w3schools.com/python/ref_string_join.asp)
+- 예제 1: `",".join(elements)` → "Fire,Air,Water"
+- 예제 2: `"".join(elements)` → "FireAirWater"
+
+<br/>
+
 ### 리스트 컴프리헨션
 - 직관적으로 리스트를 생성하는 방법
 - 컴프리헨션(Comprehension): 파이썬의 자료구조(list, dictionary, set)에 데이터를 좀 더 쉽고 간결하게 담기 위한 문법
