@@ -58,3 +58,14 @@ class Solution:
             count += freqs[char]
 
         return count
+
+# ==================================================
+# 파이썬다운 방식
+'''
+- 해시 테이블과 관련 없지만 파이썬다운 풀이로 한 줄만으로 계산 가능하다.
+- 리스트 컴프리헨션 사용
+
+'''
+class Solution:
+    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+        return sum(s in jewels for s in stones)
